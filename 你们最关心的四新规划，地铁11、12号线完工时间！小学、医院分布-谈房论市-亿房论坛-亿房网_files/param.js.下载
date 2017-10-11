@@ -1,0 +1,6 @@
+var snsurl_registUrl = 'http://uc.fdc.com.cn/regmain.html'; 
+var snsurl_newHouse_inserthouse_requrl = 'http://house.m.api.fdc.com.cn'; 
+var snsurl_newHouse_inserthouse_url = 'newhouse.list.getjsonp'; 
+var snsurl_dec_weixin_jianli_qa_url = 'http://decwx.fdc.com.cn/api/wx/getContentShortUrl?tid=tid_param_str'; 
+var snsurl_uc_url = 'http://gw.fdc.com.cn'; 
+var snsurl_dec_router_rest = 'http://gw.fdc.com.cn/router/rest'; 

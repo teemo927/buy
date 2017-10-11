@@ -1,0 +1,28 @@
+(function() {
+  // 站长统计代码
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var _bp_s = document.getElementsByTagName("script")[0];
+  _bp_s.parentNode.insertBefore(bp, _bp_s);
+
+  // 整站百度统计 81af4e14e5dcc66329494e48911a5966
+  var _fdc_home = document.createElement("script");
+  _fdc_home.src = "//hm.baidu.com/hm.js?81af4e14e5dcc66329494e48911a5966";
+  var _fdc_home_s = document.getElementsByTagName("script")[0]; 
+  _fdc_home_s.parentNode.insertBefore(_fdc_home, _fdc_home_s);
+
+  // 业务线百度统计
+  var business_id = document.getElementById('baidu_count').value.replace(/\s/g,"");
+  if(business_id){
+    var _business_hm = document.createElement("script");
+    _business_hm.src = "//hm.baidu.com/hm.js?"+business_id;
+    var _business_hm_s = document.getElementsByTagName("script")[0]; 
+    _business_hm_s.parentNode.insertBefore(_business_hm, _business_hm_s);
+  }
+})();

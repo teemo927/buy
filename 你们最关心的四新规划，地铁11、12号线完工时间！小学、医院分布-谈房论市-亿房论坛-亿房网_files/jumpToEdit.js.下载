@@ -1,0 +1,34 @@
+/**
+ * Created by wf2311 on 2016/3/30 0030.
+ */
+getUrlParam = function (name) {
+  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+  var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+  if (r != null) return unescape(r[2]);
+  return null; //返回参数值
+};
+
+window.onload = function () {
+  var m = getUrlParam('m');
+  var pid = getUrlParam('pid');
+  if (m != undefined && m == 'editReply' && pid != undefined && pid != null) {
+    $(".reply").click();
+    var html = '';
+    var postContents=$('.postcontent');
+    postContents.each(function(){
+      if($(this).attr('pid')==pid){
+        html=$(this).find(".post-content").html();
+      }
+    })
+    ue.ready(function () {
+      ue.setContent(html);
+    });
+    $('.edit-pid').val(pid);
+    // 封装“插入楼盘”数组，显示相关内容
+    var thisBuildData_str = $('.insertHouseCls[pid="' + pid + '"]').val();
+    if (thisBuildData_str != '') {
+      var buildJsonArray = $.parseJSON(thisBuildData_str);
+      dialogbtn.showUpdateHouses(buildJsonArray);
+    }
+  }
+};
